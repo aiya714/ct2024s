@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-    <img src="src/shiue/111598057.png" height="150" width="150">
+    <img src="src/shiue/111598057.jpg" height="150" width="150">
     <script>
         // 设定SVG大小
         var margin = {top: 10, right: 30, bottom: 30, left: 60},
@@ -40,7 +40,7 @@
 
             // 设置X轴比例尺
             var x = d3.scaleLinear()
-                .domain([0.45, 0.65]) // ssim
+                .domain([0.70, 0.80]) // ssim
                 .range([ 0, width ]);
             svg.append("g")
                 .attr("transform", "translate(0," + height + ")")
@@ -59,7 +59,7 @@
 
             // 设置Y轴比例尺
             var y = d3.scaleLinear()
-                .domain([0.35, 0.60]) // lpips
+                .domain([0.25, 0.50]) // lpips
                 .range([ height, 0]);
             svg.append("g")
                 .call(d3.axisLeft(y));
@@ -77,7 +77,7 @@
                 .text("LPIPS");
 
             var filteredData = data.filter(function(d) {
-                return d.SSIM >= 0.45 && d.SSIM <= 0.65 && d.LPIPS >= 0.35 && d.LPIPS <= 0.60;
+                return d.SSIM >= 0.70 && d.SSIM <= 0.80 && d.LPIPS >= 0.25 && d.LPIPS <= 0.50;
             });
 
             // 创建散点
